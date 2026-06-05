@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "kopibot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiomqtt>=2.5.1",
+    "pydantic>=2.13.4",
+]
+
+[project.scripts]
+kopibot = "kopibot.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kopibot"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+    "ruff>=0.15.12",
+]
+
